@@ -1,0 +1,29 @@
+-- create database college;
+-- use college;
+-- create table students
+-- (locationid int auto_increment unique,
+-- fullname varchar(25),
+-- adress varchar(100),
+-- study varchar(50),
+-- daterow date);
+-- create table subs
+-- (idsub int auto_increment unique,
+-- datesub date,
+-- idstudent int);
+-- insert into students values
+-- (0, "maor", "emoraim","java","2022-02-06"),
+-- (0, "osher", "zahal","bootstrap","2021-02-06");
+-- insert into subs values
+-- (0, "2022-04-06", 1),
+-- (0, "2021-05-06", 2);
+-- select fullname,adress,study from students inner join subs on students.locationid = subs.idstudent;
+select * from students inner join subs on students.locationid = subs.idstudent;
+
+פתרון למטלה:
+אנא תצרו בסיס נתונים עבור חדר הכושר של המכללה.
+תצטרכו שתי טבלאות:
+ID ייחודי שיוכנס אוטומטית
+שם פרטים שם משפחה כתובת ותחום לימודים תאריך התחלת מנוי 
+וID של הסטודנט הרשום
+יש להכניס למסד הנתונים של הסטודנטים שלוש רשומות. למסד הנתונים של חדר הכושר יש להכניס שתי רשומות. יש ליצור סקריפט
+שיציג בטבלה אחת את השם הפרטי ושם המשפחה של המנויים לחדר כושר.
