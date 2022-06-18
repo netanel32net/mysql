@@ -1,0 +1,57 @@
+SELECT * FROM college.subs;-- create database college;
+-- use college;
+-- create table students
+-- (locationid int auto_increment unique,
+-- fullname varchar(25),
+-- adress varchar(100),
+-- study varchar(50),
+-- daterow date);
+-- create table subs
+-- (idsub int auto_increment unique,
+-- datesub date,
+-- idstudent int);
+-- insert into students values
+-- (0, "maor", "emoraim","java","2022-02-06"),
+-- (0, "osher", "zahal","bootstrap","2021-02-06");
+-- insert into subs values
+-- (0, "2022-04-06", 1),
+-- (0, "2021-05-06", 2);
+-- select fullname,adress,study from students inner join subs on students.locationid = subs.idstudent;
+-- select * from students inner join subs on students.locationid = subs.idstudent;
+-- create table subs_type
+-- (id int auto_increment,
+-- typename varchar(45),
+-- constraint type_sub_name primary key (id));
+-- insert into subs_type (typename) values
+-- ("yearly"),
+-- ("monthly"),
+-- ("daily"),
+-- ("premium");
+-- select * from subs_type;
+-- alter table subs add column sub_type int;
+-- alter table subs add constraint sub_type_constraint foreign key (sub_type) references subs_type(id);
+-- insert into subs (datesub, idstudent, sub_type) values
+-- ("2022-01-01", 4, 1),
+-- ("2022-01-01", 1, 2),
+-- ("2022-01-01", 2, 3);
+-- select * from subs inner join subs_type on subs.idsub = subs_type.id;
+-- select idstudent,typename from subs inner join subs_type on subs.idsub = subs_type.id;
+-- insert into students (fullname,adress, study, daterow) values
+-- ("ori","asivim2","css","2022-06-04"),
+-- ("shimi","shaul3","html","2022-05-04"),
+-- ("vova","bibi12","htmlAndCss","2022-04-04"),
+-- ("marina","zagal","css++","2022-03-04");
+select idstudent,typename from subs inner join subs_type on subs.idsub = subs_type.id;
+
+מטלת המשך מקוד של index
+
+פרטי המטלה:
+בהתבסס על בסיס הנתונים שכבר יצרתם במטלה הקודמת:
+1) אנא תצרו עוד טבלה של סוגי מנויים שתכין את העמודות: ID
+ככה שלכל מנוי חדש שייכנס לטבלה יהיה חייב להיות סוג מנוי
+2) תוסיפו עמודה בטבלת המנויים באמצעות alter
+של סוגי אי די ככה שלכל מנוי חדש שייכנס לטבלה יהיה חייב להיות סוג מנוי
+3) תעשו קונסטריינט של foreign key
+בין הטבלה של סוגי המנויים אי די לטבלת המנויים ספיציפית לעמודה החדשה שהוספתם תוסיפו כמה שורות של מנויים חדשים
+4) תציגו באמצעות join
+טבלה שיש בה את האי די של הסטודנט ואת שם סוג המנוי שיש לו
